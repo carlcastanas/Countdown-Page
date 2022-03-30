@@ -1,0 +1,186 @@
+html {
+  font-size: 14px;
+}
+body {
+  margin: 0;
+  font-size: 14px;
+  font-family: "Red Hat Text", sans-serif;
+  color: white;
+}
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+.container.bg {
+  background-color: hsl(235, 16%, 14%);
+  min-height: 100vh;
+  background-image: url("https://raw.githubusercontent.com/rithinark/Daily-Challenge/6955c6ab93447ac3aa007320fcbd8e522d1159c2/frontend/day2/images/bg-stars.svg"), url("https://raw.githubusercontent.com/rithinark/Daily-Challenge/6955c6ab93447ac3aa007320fcbd8e522d1159c2/frontend/day2/images/pattern-hills.svg");
+  background-repeat: no-repeat;
+  background-position: top, bottom;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+  .main-box{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10% 0;
+  }
+  
+
+.heading {
+  font-size: 2em;
+  letter-spacing: 0.5rem;
+}
+.box {
+  display: flex;
+}
+.card {
+  margin: 2em 0.5em;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  perspective: 300px;
+}
+.card-flip {
+  background-color: hsl(236, 21%, 26%);
+  height: 50%;
+  width: 100%;
+  border-radius: 0.3em;
+}
+
+.counter {
+  position: absolute;
+  font-size: 4em;
+  font-weight: 800;
+  color: hsl(345, 95%, 68%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.denoters {
+  text-align: center;
+  color: rgb(125 123 152);
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+.flipper {
+  animation: flip 0.3s;
+  transform-origin: bottom;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: none;
+  transition: 0.1s;
+}
+
+.card-flip.upper {
+  background: linear-gradient(to top, #2f3145c7, hsl(236, 21%, 26%) 88%);
+}
+.card-flip.lower {
+  background: linear-gradient(to bottom, #242635c7, hsl(236, 21%, 26%) 88%);
+}
+
+.card-flip.upper::after {
+  content: "";
+  background: black;
+  height: 0.6em;
+  width: 0.6em;
+  position: absolute;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.card-flip.lower::before {
+  content: "";
+  background: black;
+  height: 0.6em;
+  width: 0.6em;
+  position: absolute;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  z-index: 10;
+  top: 50%;
+  left: 100%;
+  transform: translate(-100%, -50%);
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotateX(-180deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+  .card {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 567px) {
+  body {
+    font-size: 9px;
+  }
+  .card {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (max-width: 375px) {
+  body {
+    font-size: 8px;
+  }
+  .card {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+.social {
+  display: flex;
+}
+
+.icon {
+  background-size: contain;
+  height: 30px;
+  width: 30px;
+  margin: 2em;
+}
+.fb {
+  background-image: url("https://raw.githubusercontent.com/rithinark/Daily-Challenge/6955c6ab93447ac3aa007320fcbd8e522d1159c2/frontend/day2/images/icon-facebook.svg");
+}
+.pinterest {
+  background-image: url("https://raw.githubusercontent.com/rithinark/Daily-Challenge/6955c6ab93447ac3aa007320fcbd8e522d1159c2/frontend/day2/images/icon-pinterest.svg");
+}
+.insta {
+  background-image: url("https://raw.githubusercontent.com/rithinark/Daily-Challenge/6955c6ab93447ac3aa007320fcbd8e522d1159c2/frontend/day2/images/icon-instagram.svg");
+}
